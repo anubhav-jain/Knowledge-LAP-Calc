@@ -1,16 +1,3 @@
-<h1>Knowledge LAP provisioning calculator</h1>
-<div id="editionDiv">
-  Org Edition : 
-<select name="Edition" id="Edition">
-  <option value="1">Essentials or Professional</option>
-  <option value="2">Enterprise or Developer</option>
-  <option value="3">Unlimited</option>
-</select>
-</div>
-<div id="articleDiv">Knowledge Articles : <input id="articles" type="number" onchange="calculate()"></input></div>
-<div id="versionDiv">Knowledge Versions : <input id="versions" type="number" onchange="calculate()"></input></div>
-<div id="translationDiv">Knowledge Translations : <input id="translations" type="number" onchange="calculate()"></input></div>
-<h1>Knowledge Article Versions for this org : <span id="result"></span></h1>
 <script type="application/javascript">
 function calculate() {
   var a = document.getElementById("articles").value;
@@ -61,3 +48,17 @@ function calculate() {
      }
   }
 </script>
+
+<h1>Knowledge LAP provisioning calculator</h1>
+<div id="editionDiv">
+  Org Edition : 
+<select name="Edition" id="Edition">
+  <option value="1">Essentials or Professional</option>
+  <option value="2">Enterprise or Developer</option>
+  <option value="3">Unlimited</option>
+</select>
+</div>
+<div id="articleDiv">Knowledge Articles : <input id="articles" type="number" onchange="calculate()"></input></div>
+<div id="versionDiv">Knowledge Versions : <input id="versions" type="number" onchange="calculate()"></input></div>
+<div id="translationDiv">Knowledge Translations : <input id="translations" type="number" onchange="calculate()"></input></div>
+<h1>Knowledge Article Versions for this org : <span id="result"></span></h1>
