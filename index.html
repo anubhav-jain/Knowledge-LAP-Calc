@@ -15,12 +15,10 @@
 <script type="application/javascript">
 function calculate() {
   var a = document.getElementById("articles").value;
-  alert(a);
   var b = document.getElementById("versions").value;
-  alert(b);
   var c = document.getElementById("translations").value;
-  alert(c);
   if(a && b && c) {
+     alert(a*b*c);
      document.getElementById("result").value = a*b*c;
   }
 }
