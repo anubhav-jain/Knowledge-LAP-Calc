@@ -63,7 +63,7 @@ function calculate() {
 <h1>Knowledge LAP provisioning calculator</h1>
   <h2>This is a tool to calculate what limits are pre-approved for knowledge provisioning. Enter the new limits that the customer has requested
   in the boxes below. If you see 4 green results (3 for the limits you enter and 1 cumulative at the bottom), then you are cleared to make the change
-  without any additional clearance. If you see one or more red boxes, then please go ahead and file a LAP here : Link</h2>
+  without any additional clearance. If you see one or more red boxes, then please go ahead and file a LAP here : Link
 <div id="editionDiv">
   Org Edition : 
 <select name="Edition" id="Edition" onchange="calculate()">
@@ -75,5 +75,6 @@ function calculate() {
 <div id="articleDiv">Knowledge Articles : <input id="articles" type="number" onkeypress="calculate()" onchange="calculate()"></input></div>
 <div id="versionDiv">Knowledge Versions : <input id="versions" type="number" onkeypress="calculate()" onchange="calculate()"></input></div>
 <div id="translationDiv">Knowledge Translations : <input id="translations" type="number" onkeypress="calculate()" onchange="calculate()"></input></div>
+</h2>
 <h1>Knowledge Article Versions for this org : <span id="result"></span></h1>
 </div>
