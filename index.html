@@ -7,31 +7,31 @@ function calculate() {
   
   if(a) {
     if(edition = '1') {
-      styleOptions("articles", a, '45000');
+      styleOptions(document.getElementById("articles"), a, '45000');
     } else if (edition = '2') {
-      styleOptions("articles", a, '125000');
+      styleOptions(document.getElementById("articles"), a, '125000');
     } else if (edition = '3') {
-      styleOptions("articles", a, '500000');
+      styleOptions(document.getElementById("articles"), a, '500000');
     }
   }
 
   if(b) {
     if(edition = '1') {
-      styleOptions("versions", b, '10');
+      styleOptions(document.getElementById("versions"), b, '10');
     } else if (edition = '2') {
-      styleOptions("versions", b, '50');
+      styleOptions(document.getElementById("versions"), b, '50');
     } else if (edition = '3') {
-      styleOptions("versions", b, '50');
+      styleOptions(document.getElementById("versions"), b, '50');
     }
   }
   
   if(c) {
     if(edition = '1') {
-      styleOptions("translations", c, '4');
+      styleOptions(document.getElementById("translations"), c, '4');
     } else if (edition = '2') {
-      styleOptions("translations", c, '8');
+      styleOptions(document.getElementById("translations"), c, '8');
     } else if (edition = '3') {
-      styleOptions("translations", c, '8');
+      styleOptions(document.getElementById("translations"), c, '8');
     }
   }
   
@@ -42,9 +42,9 @@ function calculate() {
   
   function styleOptions(elementId, actual, max) {
      if(actual > max) {
-       document.getElementById(elementId).style.backgroundColor = "red";
+       elementId.style.backgroundColor = "red";
      } else {
-       document.getElementById(elementId).atyle.backgroundColor = "green";
+       elementId.style.backgroundColor = "green";
      }
   }
 </script>
