@@ -2,10 +2,9 @@
 <div id="editionDiv">
   Org Edition : 
 <select name="Edition" id="Edition">
-  <option value="essentials">Essentials</option>
-  <option value="professional">Professional</option>
-  <option value="enterprise">Enterprise</option>
-  <option value="unlimited">Unlimited</option>
+  <option value="1">Essentials or Professional</option>
+  <option value="2">Enterprise or Developer</option>
+  <option value="3">Unlimited</option>
 </select>
 </div>
 <div id="articleDiv">Knowledge Articles : <input id="articles" type="number" onchange="calculate()"></input></div>
@@ -17,9 +16,48 @@ function calculate() {
   var a = document.getElementById("articles").value;
   var b = document.getElementById("versions").value;
   var c = document.getElementById("translations").value;
+  var edition = document.getElementById("Edition").value;
+  
+  if(a) {
+    if(edition = '1') {
+      styleOptions("articles", a, 45000);
+    } else if (edition = '2') {
+      styleOptions("articles", a, 125000);
+    } else if (edition = '3') {
+      styleOptions("articles", a, 500000);
+    }
+  }
+
+  if(b) {
+    if(edition = '1') {
+      styleOptions("versions", b, 10);
+    } else if (edition = '2') {
+      styleOptions("versions", b, 50);
+    } else if (edition = '3') {
+      styleOptions("versions", b, 50);
+    }
+  }
+  
+  if(c) {
+    if(edition = '1') {
+      styleOptions("translations", c, 4);
+    } else if (edition = '2') {
+      styleOptions("translations", c, 8);
+    } else if (edition = '3') {
+      styleOptions("translations", c, 8);
+    }
+  }
+  
   if(a && b && c) {
-     alert(a*b*c);
      document.getElementById("result").innerHTML = a*b*c;
   }
 }
+  
+  function styleOptions(var elementId, var actual, var max) {
+     if(actual > max) {
+       document.getElementById(elementId).backgroundColor = "red";
+     } else {
+       document.getElementById(elementId).backgroundColor = "green";
+     }
+  }
 </script>
