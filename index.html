@@ -1,5 +1,6 @@
 <h1>Knowledge LAP provisioning calculator</h1>
 <div id="editionDiv">
+  Org Edition : 
 <select name="Edition" id="Edition">
   <option value="essentials">Essentials</option>
   <option value="professional">Professional</option>
@@ -7,10 +8,17 @@
   <option value="unlimited">Unlimited</option>
 </select>
 </div>
-<div id="articleDiv">Knowledge Articles<input id="articles"></input></div>
-<div id="versionDiv">Knowledge Versions<input id="versions"></input></div>
-<div id="translationDiv">Knowledge Translations<input id="translations"></input></div>
+<div id="articleDiv">Knowledge Articles : <input id="articles" type="number" onchange="calculate()"></input></div>
+<div id="versionDiv">Knowledge Versions : <input id="versions" type="number" onchange="calculate()"></input></div>
+<div id="translationDiv">Knowledge Translations : <input id="translations" type="number" onchange="calculate()"></input></div>
 <h1>Knowledge Article Versions for this org : <span id="result"></span></h1>
 <script type="application/javascript">
-
+function calculate() {
+  var a = document.getElementById("articles").value;
+  var b = document.getElementById("versions").value;
+  var c = document.getElementById("translations").value;
+  if(a && b && c) {
+     document.getElementById("result").value = a*b*c;
+  }
+}
 </script>
