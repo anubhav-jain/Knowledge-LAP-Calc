@@ -37,17 +37,23 @@ function calculate() {
   
   if(a && b && c) {
      document.getElementById("result").innerHTML = a*b*c;
+      //logic to shade article number per org
+      if(edition == '1') {
+        styleOptions(document.getElementById("result"), a*b*c, 10000);
+      } else if (edition == '2') {
+        styleOptions(document.getElementById("result"), a*b*c, 10000);
+      } else if (edition == '3') {
+        styleOptions(document.getElementById("result"), a*b*c, 20000000);
+      }
+  } else {
+     document.getElementById("result").innerHTML = ''; 
   }
 }
   
   function styleOptions(elementId, actual, max) {
-    alert(actual);
-    alert(max);
      if(actual > max) {
-       alert('red');
        elementId.style.backgroundColor = "red";
      } else {
-       alert('green');
        elementId.style.backgroundColor = "green";
      }
   }
