@@ -11,7 +11,11 @@ function calculate() {
     } else if (edition == '2') {
       styleOptions(document.getElementById("articles"), a, 125000);
     } else if (edition == '3') {
-      styleOptions(document.getElementById("articles"), a, 500000);
+      if(document.getElementById("classic").checked) {
+        styleOptions(document.getElementById("articles"), a, 250000);
+      } else {
+        styleOptions(document.getElementById("articles"), a, 500000);
+      }
     }
   }
 
@@ -29,9 +33,13 @@ function calculate() {
     if(edition == '1') {
       styleOptions(document.getElementById("translations"), c, 4);
     } else if (edition == '2') {
-      styleOptions(document.getElementById("translations"), c, 8);
+      styleOptions(document.getElementById("translations"), c, 10);
     } else if (edition == '3') {
-      styleOptions(document.getElementById("translations"), c, 8);
+      if(document.getElementById("classic").checked) {
+        styleOptions(document.getElementById("translations"), c, 40);
+      } else {
+        styleOptions(document.getElementById("translations"), c, 100);
+      }
     }
   }
   
@@ -43,7 +51,11 @@ function calculate() {
       } else if (edition == '2') {
         styleOptions(document.getElementById("result"), a*b*c, 10000000);
       } else if (edition == '3') {
-        styleOptions(document.getElementById("result"), a*b*c, 20000000);
+        if(document.getElementById("classic").checked) {
+          styleOptions(document.getElementById("result"), a*b*c, 10000000);
+        } else {
+          styleOptions(document.getElementById("result"), a*b*c, 20000000);
+        }
       }
   } else {
      document.getElementById("result").innerHTML = ''; 
@@ -75,10 +87,10 @@ function calculate() {
   <option value="3">Unlimited or Performance</option>
 </select>
 </div>
+<div id="classicDiv">Is customer on Classic Knowledge : <input type="checkbox" id="classic" name="classic" value="isClassic" onchange="calculate()"></div>
 <div id="articleDiv">Knowledge Articles : <input id="articles" type="number" onkeydown="calculate()" onkeyup="calculate()" onchange="calculate()"></input></div>
 <div id="versionDiv">Knowledge Versions per Article : <input id="versions" type="number" onkeydown="calculate()" onkeyup="calculate()" onchange="calculate()"></input></div>
 <div id="translationDiv">Knowledge Translations per Article : <input id="translations" type="number" onkeydown="calculate()" onkeyup="calculate()" onchange="calculate()"></input></div>
-<div id="classicDiv">Is customer on Classic Knowledge : <input type="checkbox" id="classic" name="classic" value="isClassic"></div>
 </h2>
 <h1>Knowledge Article Versions for this org : <span id="result"></span></h1>
 </div>
